@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silent Co-Driver | 3D F1 Radio Intelligence & Driver Stress Telemetry</title>
+  <link rel="stylesheet" href="/css/pitwall.css" />
+  <!-- Three.js, Controls & Loaders -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <!-- Chart.js for Telemetry Curves -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Pit Wall Telemetry Top Navigation -->
+  <header class="pitwall-header">
+    <div class="brand-section">
+      <div class="f1-badge">F1</div>
+      <div class="brand-title">
+        <h1>SILENT CO-DRIVER</h1>
+        <div class="subtitle">RADIO INTELLIGENCE • SPEAKER DIARIZATION • COGNITIVE STRESS RADAR</div>
+      </div>
+    </div>
+
+    <div class="header-status-bar">
+      <div class="status-pill" id="modelLoadingPill" style="border-color: rgba(0, 240, 255, 0.4);">
+        <span style="color: var(--f1-cyan);">🏎️ 3D MODEL:</span>
+        <span id="modelLoadingText" style="color: #FFF; font-weight: 700;">LOADING McLAREN MP4/5...</span>
+      </div>
+      <div class="status-pill" id="cudaStatus">
+        <span class="status-dot"></span>
+        <span id="gpuNameDisplay">CUDA ACCELERATED • RTX 4050</span>
+      </div>
+      <div class="status-pill">
+        <span style="color: var(--f1-cyan);">PIT WALL LINK</span>
+        <span style="color: var(--text-main); font-weight: 700;" id="liveClock">15:42:10 UTC</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid Layout -->
+  <main class="dashboard-container">
+    <!-- Left Column: 3D Interactive F1 Car Viewport -->
+    <section class="viewport-card glass-panel" id="viewportCard">
+      <div class="canvas-container" id="f1CanvasContainer"></div>
+
+      <!-- Top Overlay on 3D Viewport -->
+      <div class="viewport-overlay">
+        <div class="driver-tag-badge">
+          <span class="racing-num" id="racingNumBadge">44</span>
+          <span class="name" id="driverNameBadge">LEWIS HAMILTON</span>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-tech);" id="gpSessionBadge">MONACO GRAND PRIX • LAP 48/78</div>
+        </div>
+
+        <div class="camera-toolbar">
+          <button class="cam-btn active" data-cam="pitwall">📊 Pit Wall</button>
+          <button class="cam-btn" data-cam="cockpit">🏎️ Cockpit T-Cam</button>
+          <button class="cam-btn" data-cam="aero">⚡ Aero Profile</button>
+          <button class="cam-btn" data-cam="chase">🏁 Front 3/4</button>
+        </div>
+      </div>
+
+      <!-- Bottom HUD on 3D Viewport -->
+      <div class="viewport-bottom-hud">
+        <div class="speed-cluster">
+          <div>
+            <div class="speed-val" id="speedVal">284</div>
+            <div class="speed-unit">KM / H</div>
+          </div>
+          <div class="gear-box" id="gearVal">G 7</div>
+        </div>
+
+        <div class="tire-thermal-mini">
+          <div class="tire-tag">
+            <span style="color: var(--text-muted);">FL:</span>
+            <span class="tire-temp-warm" id="tempFL">101.2°C</span>
+          </div>
+          <div class="tire-tag">
+            <span style="color: var(--text-muted);">FR:</span>
+            <span class="tire-temp-opt" id="tempFR">99.8°C</span>
+          </div>
+          <div class="tire-tag">
+            <span style="color: var(--text-muted);">RL:</span>
+            <span class="tire-temp-hot" id="tempRL">118.6°C</span>
+          </div>
+          <div class="tire-tag">
+            <span style="color: var(--text-muted);">RR:</span>
+            <span class="tire-temp-hot" id="tempRR">117.9°C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: AI Stress Intelligence Radar -->
+    <section class="ai-intel-panel">
+      <!-- Hero Mood Banner -->
+      <div class="stress-hero-card glass-panel stressed" id="stressHeroCard">
+        <div>
+          <div style="font-family: var(--font-tech); font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">DRIVER PSYCHOPHYSIOLOGICAL STATE</div>
+          <div class="mood-badge-large stressed" id="moodBadge">
+            <span id="moodIcon">⚠️</span>
+            <span id="moodText">STRESSED</span>
+          </div>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Confidence: <span id="confidenceVal" style="color: #FFF; font-weight: 700;">94%</span></div>
+        </div>
+
+        <div class="stress-score-ring">
+          <div class="score-num" id="stressScoreVal" style="color: var(--f1-neon-red);">88.0</div>
+          <div class="score-label">Fused Stress Index</div>
+        </div>
+      </div>
+
+      <!-- Key Telemetry Impact Cards -->
+      <div class="telemetry-stats-grid">
+        <div class="stat-box glass-panel">
+          <div class="label">Pace Penalty</div>
+          <div class="val" id="pacePenaltyVal" style="color: var(--f1-neon-red);">+1.57s</div>
+        </div>
+        <div class="stat-box glass-panel">
+          <div class="label">Fundamental F0</div>
+          <div class="val" id="f0MeanVal">278.4 Hz</div>
+        </div>
+        <div class="stat-box glass-panel">
+          <div class="label">Vocal Jitter</div>
+          <div class="val" id="jitterVal">0.142</div>
+        </div>
+      </div>
+
+      <!-- AI Rationale Breakdown -->
+      <div class="glass-panel" style="padding: 16px;">
+        <div class="panel-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+          <h2><span>🧠</span> AI Telemetry Diagnostics</h2>
+          <span style="font-size: 0.72rem; color: var(--f1-cyan); font-family: var(--font-tech); font-weight: 700;">MULTI-MODAL</span>
+        </div>
+        <div class="explanation-list" id="explanationList">
+          <div class="explanation-item">Elevated vocal pitch indicates acute stress under cornering acceleration.</div>
+          <div class="explanation-item">Urgent radio feedback regarding critical tire performance loss.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Middle Full Width: Multi-Source Radio Station & Speaker Diarization -->
+    <section class="full-width-section">
+      <!-- Radio Selection & Waveform -->
+      <div class="audio-station-card glass-panel">
+        <div class="panel-header">
+          <h2><span>🎙️</span> F1 Team Radio Transmission Station</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted);" id="datasetSourceTag">Source: OpenF1 & MikCil/f1-team-radio</span>
+        </div>
+
+        <!-- Multi-Source Preset Buttons -->
+        <div class="source-selector-bar" id="sourceSelectorBar">
+          <button class="source-btn active" data-clip="ham_monaco_stress">🏎️ Hamilton (Monaco Stress)</button>
+          <button class="source-btn" data-clip="lec_silverstone_tire">🏎️ Leclerc (Silverstone Inters)</button>
+          <button class="source-btn" data-clip="ver_bahrain_lead">🏎️ Verstappen (Bahrain Calm)</button>
+          <button class="source-btn" data-clip="nor_hungary_tired">🏎️ Norris (Hungary Fatigue)</button>
+          <button class="source-btn" data-clip="alo_monza_engine">🏎️ Alonso (Monza Deployment)</button>
+        </div>
+
+        <!-- Live Waveform Canvas Visualizer -->
+        <div class="waveform-container">
+          <canvas id="waveformCanvas"></canvas>
+        </div>
+
+        <!-- Controls -->
+        <div class="playback-controls">
+          <button class="play-btn" id="playBtn">
+            <span id="playIcon">▶</span>
+            <span id="playText">PLAY TRANSMISSION</span>
+          </button>
+          <div class="time-readout">
+            <span id="currentTime">0.0s</span> / <span id="totalTime">6.0s</span>
+          </div>
+          <audio id="audioPlayer" preload="auto" style="display: none;"></audio>
+        </div>
+
+        <!-- Custom Upload Drop Zone -->
+        <div class="upload-drop-zone" id="dropZone">
+          <input type="file" id="audioFileInput" accept="audio/*" style="display: none;" />
+          <p>📁 Drag & Drop any custom motorsport / radio audio file (.wav, .mp3) or <strong>click to upload</strong></p>
+        </div>
+      </div>
+
+      <!-- Speaker Diarization Conversation Log -->
+      <div class="diarization-card glass-panel">
+        <div class="panel-header">
+          <h2><span>🗣️</span> Generalized Speaker Diarization</h2>
+          <span style="font-size: 0.75rem; color: var(--f1-cyan); font-family: var(--font-tech);">ACOUSTIC + SEMANTIC SPLIT</span>
+        </div>
+
+        <div class="diarization-feed" id="diarizationFeed">
+          <!-- Turns populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Section: Lap Telemetry & Pace Degradation Chart -->
+    <section class="chart-section glass-panel">
+      <div class="panel-header">
+        <h2><span>📈</span> Race Lap Telemetry & Pace Degradation Correlation</h2>
+        <div style="font-size: 0.8rem; font-family: var(--font-tech); color: var(--text-muted);">
+          <span style="color: var(--f1-cyan);">■ Lap Times (s)</span> &nbsp;|&nbsp; 
+          <span style="color: var(--f1-neon-red);">▲ Stress Spike (Radio Event)</span>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas id="lapTelemetryChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/f1_scene_3d.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

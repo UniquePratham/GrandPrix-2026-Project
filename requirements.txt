@@ -1,0 +1,23 @@
+# Core Web & API Framework
+fastapi>=0.115.0
+uvicorn>=0.30.0
+pydantic>=2.8.0
+httpx>=0.27.0
+requests>=2.31.0
+
+# AI & Deep Learning (CUDA / CPU)
+torch>=2.2.0
+torchaudio>=2.2.0
+transformers>=4.40.0
+huggingface-hub>=0.23.0
+safetensors>=0.4.0
+
+# Scientific Computing & Audio Signal Processing
+numpy>=1.26.0
+scipy>=1.12.0
+scikit-learn>=1.4.0
+
+# Testing & Utilities
+pytest>=8.0.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
