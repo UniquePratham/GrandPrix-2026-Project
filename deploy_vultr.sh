@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# 🏎️ SILENT CO-DRIVER — VULTR CLOUD DEPLOYMENT & CLOUDFLARE TUNNEL SCRIPT
-# Automated setup for Ubuntu 22.04 / 24.04 LTS instances
+# 🏎️ SILENT CO-DRIVER — VULTR CLOUD DEPLOYMENT & PERSISTENT TUNNEL SCRIPT
+# Runs 24/7 in background even after closing SSH connection
 # ==============================================================================
 
 set -e
 
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 echo -e "${CYAN}"
 echo "======================================================================"
-echo "🏎️  SILENT CO-DRIVER — VULTR CLOUD DEPLOYMENT INITIALIZER"
+echo "🏎️  SILENT CO-DRIVER — 24/7 BACKGROUND CLOUD DEPLOYMENT"
 echo "======================================================================"
 echo -e "${NC}"
 
 # 1. Update system packages
-echo -e "${CYAN}>> [1/5] Updating system packages and installing prerequisites...${NC}"
+echo -e "${CYAN}>> [1/5] Updating packages and tools...${NC}"
 apt-get update -y
 apt-get install -y python3-pip python3-venv git curl tmux build-essential
 
@@ -32,42 +33,70 @@ if [ ! -d "venv" ]; then
 fi
 source venv/bin/activate
 
-# 3. Upgrade pip and install requirements
+# 3. Install project dependencies
 echo -e "${CYAN}>> [3/5] Installing project dependencies from requirements.txt...${NC}"
 pip install --upgrade pip
 pip install -r requirements.txt
 
 # 4. Install Cloudflare Tunnel CLI (cloudflared)
-echo -e "${CYAN}>> [4/5] Installing Cloudflare Tunnel (cloudflared)...${NC}"
+echo -e "${CYAN}>> [4/5] Checking Cloudflare Tunnel (cloudflared)...${NC}"
 if ! command -v cloudflared &> /dev/null; then
     curl -L --output /tmp/cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
     dpkg -i /tmp/cloudflared.deb || apt-get install -f -y
     rm -f /tmp/cloudflared.deb
-    echo -e "${GREEN}✓ Cloudflare CLI installed successfully.${NC}"
+    echo -e "${GREEN}✓ Cloudflare CLI installed.${NC}"
 else
     echo -e "${GREEN}✓ Cloudflare CLI is already installed.${NC}"
 fi
 
-# 5. Start Backend Server in persistent tmux session
-echo -e "${CYAN}>> [5/5] Launching FastAPI Backend & Cloudflare Tunnel...${NC}"
+# 5. Start Backend in persistent detached tmux session
+echo -e "${CYAN}>> [5/5] Launching Persistent Background Services...${NC}"
+
+# Kill previous sessions if any
 tmux kill-session -t f1-backend 2>/dev/null || true
+tmux kill-session -t f1-tunnel 2>/dev/null || true
+
+# Start FastAPI backend
 tmux new-session -d -s f1-backend "cd '$REPO_DIR' && source venv/bin/activate && uvicorn backend.app:app --host 0.0.0.0 --port 8000"
+echo -e "${GREEN}✓ FastAPI backend started in background session [f1-backend].${NC}"
 
 sleep 3
 
-# Verify backend health locally
-if curl -s http://127.0.0.1:8000/api/health > /dev/null; then
-    echo -e "${GREEN}✓ Backend is running and healthy on http://127.0.0.1:8000${NC}"
+# Start Cloudflare Tunnel in background session and log output
+rm -f "$REPO_DIR/tunnel.log"
+tmux new-session -d -s f1-tunnel "cloudflared tunnel --url http://localhost:8000 2>&1 | tee '$REPO_DIR/tunnel.log'"
+echo -e "${GREEN}✓ Cloudflare tunnel started in background session [f1-tunnel].${NC}"
+
+# Wait for tunnel URL to generate
+echo -e "${YELLOW}>> Generating your public HTTPS URL (waiting 6 seconds)...${NC}"
+sleep 6
+
+TUNNEL_URL=""
+for i in {1..10}; do
+    if [ -f "$REPO_DIR/tunnel.log" ]; then
+        TUNNEL_URL=$(grep -o 'https://[-a-zA-Z0-9.]*\.trycloudflare\.com' "$REPO_DIR/tunnel.log" | head -n 1 || true)
+        if [ -n "$TUNNEL_URL" ]; then
+            break
+        fi
+    fi
+    sleep 2
+done
+
+echo ""
+echo -e "${GREEN}======================================================================${NC}"
+echo -e "${GREEN}🎉 DEPLOYMENT SUCCESSFUL — RUNNING 24/7 IN BACKGROUND!${NC}"
+echo -e "${GREEN}======================================================================${NC}"
+if [ -n "$TUNNEL_URL" ]; then
+    echo -e "${CYAN}🌐 YOUR PUBLIC CLOUDFLARE URL:${NC}"
+    echo -e "${GREEN}${TUNNEL_URL}${NC}"
 else
-    echo -e "${RED}⚠️ Backend starting up, connecting tunnel...${NC}"
+    echo -e "${YELLOW}Tunnel is initializing. Check URL anytime with: ./status.sh${NC}"
 fi
-
-echo ""
 echo -e "${GREEN}======================================================================${NC}"
-echo -e "${GREEN}🚀 STARTING PUBLIC CLOUDFLARE HTTPS TUNNEL${NC}"
-echo -e "${GREEN}Look below for your public URL (e.g. https://xxxx.trycloudflare.com):${NC}"
-echo -e "${GREEN}======================================================================${NC}"
+echo -e "${YELLOW}ℹ️  YOU CAN SAFELY CLOSE THIS SSH WINDOW NOW.${NC}"
+echo -e "   The server and tunnel will stay permanently active in background."
 echo ""
-
-# Launch Cloudflare Tunnel (will output the live HTTPS URL directly)
-cloudflared tunnel --url http://localhost:8000
+echo -e "   Useful commands on VM:"
+echo -e "   - Check URL & Status:  ${CYAN}./status.sh${NC}"
+echo -e "   - Stop all services:   ${CYAN}./stop.sh${NC}"
+echo -e "${GREEN}======================================================================${NC}"
