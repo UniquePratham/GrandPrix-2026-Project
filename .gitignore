@@ -56,3 +56,7 @@ dist/
 .coverage
 htmlcov/
 .hypothesis/
+
+# Added by repo hygiene pass
+.env.local
+node_modules/
