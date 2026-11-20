@@ -175,3 +175,14 @@ GrandPrix 2026 Project/
 ## 📄 License & Attribution
 - Built for the **Grand Prix Hackathon** (Plaksha University & DS Brar Center for Girls and Women in STEM, Powered by Hugging Face).
 - Formula 1 radio dataset powered by `MikCil/f1-team-radio` and the OpenF1 project.
+
+## Running
+
+**Python API + web front end**
+
+```bash
+pip install -r requirements.txt
+python run.py
+```
+
+Torch is optional; audio features degrade gracefully without it.
