@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import logging
-import torch
+try:
+    import torch
+except ImportError:  # torch is optional; audio features degrade gracefully
+    torch = None
 import numpy as np
 from typing import Dict, List, Any, Optional
 from backend.config import DEVICE, ASR_MODEL_ID
@@ -24,7 +27,7 @@ class ASREngine:
     def __init__(self):
         if self.initialized:
             return
-        self.device = DEVICE if torch.cuda.is_available() else "cpu"
+        self.device = DEVICE if (torch is not None and torch.cuda.is_available()) else "cpu"
         self.model_id = ASR_MODEL_ID
         self._pipeline = None
         self.initialized = True

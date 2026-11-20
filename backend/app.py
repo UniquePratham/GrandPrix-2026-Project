@@ -58,13 +58,18 @@ class AnalyzeRequest(BaseModel):
 @app.get("/api/health")
 def get_health() -> Dict[str, Any]:
     """Returns server and hardware health status."""
-    import torch
+    try:
+        import torch
+    except ImportError:
+        torch = None
+
+    cuda = bool(torch is not None and torch.cuda.is_available())
     return {
         "status": "online",
         "device": DEVICE,
-        "cuda_available": torch.cuda.is_available(),
-        "gpu_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "None",
-        "vram_gb": round(torch.cuda.get_device_properties(0).total_memory / (1024**3), 2) if torch.cuda.is_available() else 0.0,
+        "cuda_available": cuda,
+        "gpu_name": torch.cuda.get_device_name(0) if cuda else "None",
+        "vram_gb": round(torch.cuda.get_device_properties(0).total_memory / (1024**3), 2) if cuda else 0.0,
     }
 
 

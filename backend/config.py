@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 import os
-import torch
+
+try:
+    import torch
+except ImportError:  # torch is optional for the non-audio parts of the pipeline
+    torch = None
 from pathlib import Path
 from typing import Dict, List, Any
 
@@ -17,7 +21,7 @@ for d in [CACHE_DIR, AUDIO_DIR, DATA_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
 # Hardware & Model Configuration (Auto-detects CUDA on GPU VMs or falls back cleanly to CPU)
-DEVICE = "cuda" if (os.environ.get("FORCE_CPU", "0") != "1" and torch.cuda.is_available()) else "cpu"
+DEVICE = "cuda" if (os.environ.get("FORCE_CPU", "0") != "1" and torch is not None and torch.cuda.is_available()) else "cpu"
 ASR_MODEL_ID = "openai/whisper-base"
 AUDIO_EMOTION_MODEL_ID = "ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition"
 TEXT_EMOTION_MODEL_ID = "SamLowe/roberta-base-go_emotions"
