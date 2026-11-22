@@ -190,7 +190,7 @@ Torch is optional; audio features degrade gracefully without it.
 
 ## Live demo
 
-**<https://silent-co-driver-pi.vercel.app>**
+**<https://silent-co-driver-pratham-agarwals-projects.vercel.app>**
 
 The deployed build is a **static demo**: the dashboard, 3D McLaren viewport, stress radar, lap-time chart and diarization feed all run in the browser, driven by pre-computed payloads generated from the curated radio catalog in `backend/config.py`.
 
