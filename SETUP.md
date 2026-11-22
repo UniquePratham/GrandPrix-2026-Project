@@ -20,8 +20,8 @@ This guide provides step-by-step instructions to set up, configure, and run **Si
 
 ### 1. Clone or Open the Repository
 ```bash
-git clone https://github.com/your-username/grandprix-silent-co-driver.git
-cd grandprix-silent-co-driver
+git clone https://github.com/UniquePratham/silent-co-driver.git
+cd silent-co-driver
 ```
 
 ### 2. Create and Activate a Virtual Environment

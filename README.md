@@ -9,7 +9,6 @@
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets%20%26%20Models-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-**Grand Prix Hackathon Submission — Problem Statement 1: "The Silent Co-Driver: Reading Driver Stress from Radio Calls"**  
 *Theme: Artificial Intelligence in Racing Strategy & Decision-Making | Powered by Hugging Face*
 
 [🚀 Quickstart](#-quickstart) • [✨ Key Innovations](#-key-innovations) • [🧠 Architecture](#-architecture) • [🧪 Test Suite](#-test-suite) • [📖 Setup Guide](SETUP.md) • [🤝 Contributing](CONTRIBUTING.md)
@@ -125,7 +124,7 @@ python -m pytest tests/test_pipeline.py -v
 ## 📁 Repository Structure
 
 ```
-GrandPrix 2026 Project/
+silent-co-driver/
 ├── assets/                          # 3D GLB Models & Driver Assets
 │   ├── mclaren_mp45__formula_1.glb  # High-detail McLaren 3D Model (110MB)
 │   ├── f1_car.png                   # Car telemetry render
@@ -173,7 +172,7 @@ GrandPrix 2026 Project/
 ---
 
 ## 📄 License & Attribution
-- Built for the **Grand Prix Hackathon** (Plaksha University & DS Brar Center for Girls and Women in STEM, Powered by Hugging Face).
+- Built for the Plaksha University & DS Brar Center for Girls and Women in STEM hackathon, powered by Hugging Face.
 - Formula 1 radio dataset powered by `MikCil/f1-team-radio` and the OpenF1 project.
 
 ## Running
@@ -186,3 +185,25 @@ python run.py
 ```
 
 Torch is optional; audio features degrade gracefully without it.
+
+---
+
+## Live demo
+
+**<https://silent-co-driver-pi.vercel.app>**
+
+The deployed build is a **static demo**: the dashboard, 3D McLaren viewport, stress radar, lap-time chart and diarization feed all run in the browser, driven by pre-computed payloads generated from the curated radio catalog in `backend/config.py`.
+
+The full pipeline — Whisper ASR, speaker diarization, fused stress index — needs Python and torch, so it runs locally:
+
+```bash
+pip install -r requirements.txt
+python run.py
+# open http://127.0.0.1:8000
+```
+
+To regenerate the demo payloads after editing the catalog:
+
+```bash
+python scripts/build_demo_data.py
+```

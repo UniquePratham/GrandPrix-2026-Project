@@ -1,0 +1,1537 @@
+{
+ "ham_monaco_stress": {
+  "metadata": {
+   "clip_id": "ham_monaco_stress",
+   "driver_name": "Lewis Hamilton",
+   "racing_number": "44",
+   "team": "Mercedes",
+   "grand_prix": "Monaco Grand Prix",
+   "year": 2024,
+   "lap": 48,
+   "total_laps": 60,
+   "audio_url": "https://livetiming.formula1.com/static/2024/2024-05-26_Monaco_Grand_Prix/2024-05-26_Race/TeamRadio/LEWHAM01_48_20240526_154210.mp3",
+   "transcript": "These tyres are completely dead guys, I cannot keep the rear on the track! He is all over my gearbox!"
+  },
+  "stress_analysis": {
+   "mood": "Stressed",
+   "stress_score": 88,
+   "confidence": 0.94,
+   "signals": {
+    "pitch_shift_hz": 42.5,
+    "vocal_jitter_pct": 6.8,
+    "speech_rate_wpm": 186,
+    "urgency_score": 0.88
+   },
+   "explanation": [
+    "Fundamental frequency rose 42.5 Hz above the driver's session baseline.",
+    "Vocal jitter measured 6.8% \u2014 above the calm threshold.",
+    "Linguistic urgency scored 0.88 from word choice and repetition.",
+    "Lap time lost +1.57s relative to the driver's clean-air baseline."
+   ]
+  },
+  "telemetry": {
+   "snapshot": {
+    "speed_kmh": 284,
+    "gear": 7,
+    "rpm": 11800,
+    "tire_temps_celsius": {
+     "front_left": 108,
+     "front_right": 111,
+     "rear_left": 96,
+     "rear_right": 99
+    }
+   },
+   "lap_times": [
+    {
+     "lap": 1,
+     "lap_time": 74.262
+    },
+    {
+     "lap": 2,
+     "lap_time": 74.274
+    },
+    {
+     "lap": 3,
+     "lap_time": 74.286
+    },
+    {
+     "lap": 4,
+     "lap_time": 74.298
+    },
+    {
+     "lap": 5,
+     "lap_time": 74.31
+    },
+    {
+     "lap": 6,
+     "lap_time": 74.322
+    },
+    {
+     "lap": 7,
+     "lap_time": 74.334
+    },
+    {
+     "lap": 8,
+     "lap_time": 74.346
+    },
+    {
+     "lap": 9,
+     "lap_time": 74.358
+    },
+    {
+     "lap": 10,
+     "lap_time": 74.37
+    },
+    {
+     "lap": 11,
+     "lap_time": 74.382
+    },
+    {
+     "lap": 12,
+     "lap_time": 74.394
+    },
+    {
+     "lap": 13,
+     "lap_time": 74.406
+    },
+    {
+     "lap": 14,
+     "lap_time": 74.418
+    },
+    {
+     "lap": 15,
+     "lap_time": 74.43
+    },
+    {
+     "lap": 16,
+     "lap_time": 74.442
+    },
+    {
+     "lap": 17,
+     "lap_time": 74.454
+    },
+    {
+     "lap": 18,
+     "lap_time": 74.466
+    },
+    {
+     "lap": 19,
+     "lap_time": 74.478
+    },
+    {
+     "lap": 20,
+     "lap_time": 74.49
+    },
+    {
+     "lap": 21,
+     "lap_time": 74.502
+    },
+    {
+     "lap": 22,
+     "lap_time": 74.514
+    },
+    {
+     "lap": 23,
+     "lap_time": 74.526
+    },
+    {
+     "lap": 24,
+     "lap_time": 74.538
+    },
+    {
+     "lap": 25,
+     "lap_time": 74.55
+    },
+    {
+     "lap": 26,
+     "lap_time": 74.562
+    },
+    {
+     "lap": 27,
+     "lap_time": 74.574
+    },
+    {
+     "lap": 28,
+     "lap_time": 74.586
+    },
+    {
+     "lap": 29,
+     "lap_time": 74.598
+    },
+    {
+     "lap": 30,
+     "lap_time": 74.61
+    },
+    {
+     "lap": 31,
+     "lap_time": 74.622
+    },
+    {
+     "lap": 32,
+     "lap_time": 74.634
+    },
+    {
+     "lap": 33,
+     "lap_time": 74.646
+    },
+    {
+     "lap": 34,
+     "lap_time": 74.658
+    },
+    {
+     "lap": 35,
+     "lap_time": 74.67
+    },
+    {
+     "lap": 36,
+     "lap_time": 74.682
+    },
+    {
+     "lap": 37,
+     "lap_time": 74.694
+    },
+    {
+     "lap": 38,
+     "lap_time": 74.706
+    },
+    {
+     "lap": 39,
+     "lap_time": 74.718
+    },
+    {
+     "lap": 40,
+     "lap_time": 74.73
+    },
+    {
+     "lap": 41,
+     "lap_time": 74.742
+    },
+    {
+     "lap": 42,
+     "lap_time": 74.754
+    },
+    {
+     "lap": 43,
+     "lap_time": 74.766
+    },
+    {
+     "lap": 44,
+     "lap_time": 74.778
+    },
+    {
+     "lap": 45,
+     "lap_time": 74.79
+    },
+    {
+     "lap": 46,
+     "lap_time": 74.802
+    },
+    {
+     "lap": 47,
+     "lap_time": 74.814
+    },
+    {
+     "lap": 48,
+     "lap_time": 75.82
+    },
+    {
+     "lap": 49,
+     "lap_time": 75.812
+    },
+    {
+     "lap": 50,
+     "lap_time": 75.804
+    },
+    {
+     "lap": 51,
+     "lap_time": 75.796
+    },
+    {
+     "lap": 52,
+     "lap_time": 75.788
+    },
+    {
+     "lap": 53,
+     "lap_time": 75.78
+    },
+    {
+     "lap": 54,
+     "lap_time": 75.772
+    },
+    {
+     "lap": 55,
+     "lap_time": 75.764
+    },
+    {
+     "lap": 56,
+     "lap_time": 75.756
+    },
+    {
+     "lap": 57,
+     "lap_time": 75.748
+    },
+    {
+     "lap": 58,
+     "lap_time": 75.74
+    },
+    {
+     "lap": 59,
+     "lap_time": 75.732
+    },
+    {
+     "lap": 60,
+     "lap_time": 75.724
+    }
+   ],
+   "delta": "+1.57s",
+   "base_lap_time": 74.25,
+   "stress_lap_time": 75.82
+  },
+  "diarization": [
+   {
+    "speaker": "Driver",
+    "role": "driver",
+    "text": "These tyres are completely dead guys, I cannot keep the rear on the track! He is all over my gearbox!",
+    "start": 0.0,
+    "end": 4.6,
+    "stress": "Stressed"
+   },
+   {
+    "speaker": "Pit Wall",
+    "role": "engineer",
+    "text": "Copy Lewis, Bono here. Managing gaps behind. Mode 7 when available.",
+    "start": 4.8,
+    "end": 7.5,
+    "stress": "Calm"
+   }
+  ]
+ },
+ "ver_bahrain_lead": {
+  "metadata": {
+   "clip_id": "ver_bahrain_lead",
+   "driver_name": "Max Verstappen",
+   "racing_number": "1",
+   "team": "Red Bull Racing",
+   "grand_prix": "Bahrain Grand Prix",
+   "year": 2024,
+   "lap": 22,
+   "total_laps": 60,
+   "audio_url": "https://livetiming.formula1.com/static/2024/2024-03-02_Bahrain_Grand_Prix/2024-03-02_Race/TeamRadio/MAXVER01_22_20240302_162510.mp3",
+   "transcript": "Car balance is feeling good, shifting is smooth. We can extend this stint."
+  },
+  "stress_analysis": {
+   "mood": "Calm",
+   "stress_score": 18,
+   "confidence": 0.94,
+   "signals": {
+    "pitch_shift_hz": 8.2,
+    "vocal_jitter_pct": 1.4,
+    "speech_rate_wpm": 132,
+    "urgency_score": 0.18
+   },
+   "explanation": [
+    "Fundamental frequency rose 8.2 Hz above the driver's session baseline.",
+    "Vocal jitter measured 1.4% \u2014 within the calm threshold.",
+    "Linguistic urgency scored 0.18 from word choice and repetition.",
+    "Lap time lost +0.06s relative to the driver's clean-air baseline."
+   ]
+  },
+  "telemetry": {
+   "snapshot": {
+    "speed_kmh": 312,
+    "gear": 7,
+    "rpm": 11800,
+    "tire_temps_celsius": {
+     "front_left": 108,
+     "front_right": 111,
+     "rear_left": 96,
+     "rear_right": 99
+    }
+   },
+   "lap_times": [
+    {
+     "lap": 1,
+     "lap_time": 94.132
+    },
+    {
+     "lap": 2,
+     "lap_time": 94.144
+    },
+    {
+     "lap": 3,
+     "lap_time": 94.156
+    },
+    {
+     "lap": 4,
+     "lap_time": 94.168
+    },
+    {
+     "lap": 5,
+     "lap_time": 94.18
+    },
+    {
+     "lap": 6,
+     "lap_time": 94.192
+    },
+    {
+     "lap": 7,
+     "lap_time": 94.204
+    },
+    {
+     "lap": 8,
+     "lap_time": 94.216
+    },
+    {
+     "lap": 9,
+     "lap_time": 94.228
+    },
+    {
+     "lap": 10,
+     "lap_time": 94.24
+    },
+    {
+     "lap": 11,
+     "lap_time": 94.252
+    },
+    {
+     "lap": 12,
+     "lap_time": 94.264
+    },
+    {
+     "lap": 13,
+     "lap_time": 94.276
+    },
+    {
+     "lap": 14,
+     "lap_time": 94.288
+    },
+    {
+     "lap": 15,
+     "lap_time": 94.3
+    },
+    {
+     "lap": 16,
+     "lap_time": 94.312
+    },
+    {
+     "lap": 17,
+     "lap_time": 94.324
+    },
+    {
+     "lap": 18,
+     "lap_time": 94.336
+    },
+    {
+     "lap": 19,
+     "lap_time": 94.348
+    },
+    {
+     "lap": 20,
+     "lap_time": 94.36
+    },
+    {
+     "lap": 21,
+     "lap_time": 94.372
+    },
+    {
+     "lap": 22,
+     "lap_time": 94.18
+    },
+    {
+     "lap": 23,
+     "lap_time": 94.172
+    },
+    {
+     "lap": 24,
+     "lap_time": 94.164
+    },
+    {
+     "lap": 25,
+     "lap_time": 94.156
+    },
+    {
+     "lap": 26,
+     "lap_time": 94.148
+    },
+    {
+     "lap": 27,
+     "lap_time": 94.14
+    },
+    {
+     "lap": 28,
+     "lap_time": 94.132
+    },
+    {
+     "lap": 29,
+     "lap_time": 94.124
+    },
+    {
+     "lap": 30,
+     "lap_time": 94.116
+    },
+    {
+     "lap": 31,
+     "lap_time": 94.108
+    },
+    {
+     "lap": 32,
+     "lap_time": 94.1
+    },
+    {
+     "lap": 33,
+     "lap_time": 94.092
+    },
+    {
+     "lap": 34,
+     "lap_time": 94.084
+    },
+    {
+     "lap": 35,
+     "lap_time": 94.076
+    },
+    {
+     "lap": 36,
+     "lap_time": 94.068
+    },
+    {
+     "lap": 37,
+     "lap_time": 94.06
+    },
+    {
+     "lap": 38,
+     "lap_time": 94.052
+    },
+    {
+     "lap": 39,
+     "lap_time": 94.044
+    },
+    {
+     "lap": 40,
+     "lap_time": 94.036
+    },
+    {
+     "lap": 41,
+     "lap_time": 94.028
+    },
+    {
+     "lap": 42,
+     "lap_time": 94.02
+    },
+    {
+     "lap": 43,
+     "lap_time": 94.012
+    },
+    {
+     "lap": 44,
+     "lap_time": 94.004
+    },
+    {
+     "lap": 45,
+     "lap_time": 93.996
+    },
+    {
+     "lap": 46,
+     "lap_time": 93.988
+    },
+    {
+     "lap": 47,
+     "lap_time": 93.98
+    },
+    {
+     "lap": 48,
+     "lap_time": 93.972
+    },
+    {
+     "lap": 49,
+     "lap_time": 93.964
+    },
+    {
+     "lap": 50,
+     "lap_time": 93.956
+    },
+    {
+     "lap": 51,
+     "lap_time": 93.948
+    },
+    {
+     "lap": 52,
+     "lap_time": 93.94
+    },
+    {
+     "lap": 53,
+     "lap_time": 93.932
+    },
+    {
+     "lap": 54,
+     "lap_time": 93.924
+    },
+    {
+     "lap": 55,
+     "lap_time": 93.916
+    },
+    {
+     "lap": 56,
+     "lap_time": 93.908
+    },
+    {
+     "lap": 57,
+     "lap_time": 93.9
+    },
+    {
+     "lap": 58,
+     "lap_time": 93.892
+    },
+    {
+     "lap": 59,
+     "lap_time": 93.884
+    },
+    {
+     "lap": 60,
+     "lap_time": 93.876
+    }
+   ],
+   "delta": "+0.06s",
+   "base_lap_time": 94.12,
+   "stress_lap_time": 94.18
+  },
+  "diarization": [
+   {
+    "speaker": "Driver",
+    "role": "driver",
+    "text": "Car balance is feeling good, shifting is smooth. We can extend this stint.",
+    "start": 0.0,
+    "end": 3.8,
+    "stress": "Calm"
+   },
+   {
+    "speaker": "Pit Wall",
+    "role": "engineer",
+    "text": "Understood Max. Gap to Perez is 8.4 seconds. Box target lap 28.",
+    "start": 4.0,
+    "end": 7.2,
+    "stress": "Calm"
+   }
+  ]
+ },
+ "lec_silverstone_tire": {
+  "metadata": {
+   "clip_id": "lec_silverstone_tire",
+   "driver_name": "Charles Leclerc",
+   "racing_number": "16",
+   "team": "Ferrari",
+   "grand_prix": "British Grand Prix",
+   "year": 2024,
+   "lap": 34,
+   "total_laps": 60,
+   "audio_url": "https://livetiming.formula1.com/static/2024/2024-07-07_British_Grand_Prix/2024-07-07_Race/TeamRadio/CHALEC01_34_20240707_153500.mp3",
+   "transcript": "Rain is getting heavier in turn 15! We need intermediate tyres now, box box box!"
+  },
+  "stress_analysis": {
+   "mood": "Stressed",
+   "stress_score": 92,
+   "confidence": 0.94,
+   "signals": {
+    "pitch_shift_hz": 42.5,
+    "vocal_jitter_pct": 6.8,
+    "speech_rate_wpm": 186,
+    "urgency_score": 0.92
+   },
+   "explanation": [
+    "Fundamental frequency rose 42.5 Hz above the driver's session baseline.",
+    "Vocal jitter measured 6.8% \u2014 above the calm threshold.",
+    "Linguistic urgency scored 0.92 from word choice and repetition.",
+    "Lap time lost +1.23s relative to the driver's clean-air baseline."
+   ]
+  },
+  "telemetry": {
+   "snapshot": {
+    "speed_kmh": 284,
+    "gear": 7,
+    "rpm": 11800,
+    "tire_temps_celsius": {
+     "front_left": 108,
+     "front_right": 111,
+     "rear_left": 96,
+     "rear_right": 99
+    }
+   },
+   "lap_times": [
+    {
+     "lap": 1,
+     "lap_time": 90.462
+    },
+    {
+     "lap": 2,
+     "lap_time": 90.474
+    },
+    {
+     "lap": 3,
+     "lap_time": 90.486
+    },
+    {
+     "lap": 4,
+     "lap_time": 90.498
+    },
+    {
+     "lap": 5,
+     "lap_time": 90.51
+    },
+    {
+     "lap": 6,
+     "lap_time": 90.522
+    },
+    {
+     "lap": 7,
+     "lap_time": 90.534
+    },
+    {
+     "lap": 8,
+     "lap_time": 90.546
+    },
+    {
+     "lap": 9,
+     "lap_time": 90.558
+    },
+    {
+     "lap": 10,
+     "lap_time": 90.57
+    },
+    {
+     "lap": 11,
+     "lap_time": 90.582
+    },
+    {
+     "lap": 12,
+     "lap_time": 90.594
+    },
+    {
+     "lap": 13,
+     "lap_time": 90.606
+    },
+    {
+     "lap": 14,
+     "lap_time": 90.618
+    },
+    {
+     "lap": 15,
+     "lap_time": 90.63
+    },
+    {
+     "lap": 16,
+     "lap_time": 90.642
+    },
+    {
+     "lap": 17,
+     "lap_time": 90.654
+    },
+    {
+     "lap": 18,
+     "lap_time": 90.666
+    },
+    {
+     "lap": 19,
+     "lap_time": 90.678
+    },
+    {
+     "lap": 20,
+     "lap_time": 90.69
+    },
+    {
+     "lap": 21,
+     "lap_time": 90.702
+    },
+    {
+     "lap": 22,
+     "lap_time": 90.714
+    },
+    {
+     "lap": 23,
+     "lap_time": 90.726
+    },
+    {
+     "lap": 24,
+     "lap_time": 90.738
+    },
+    {
+     "lap": 25,
+     "lap_time": 90.75
+    },
+    {
+     "lap": 26,
+     "lap_time": 90.762
+    },
+    {
+     "lap": 27,
+     "lap_time": 90.774
+    },
+    {
+     "lap": 28,
+     "lap_time": 90.786
+    },
+    {
+     "lap": 29,
+     "lap_time": 90.798
+    },
+    {
+     "lap": 30,
+     "lap_time": 90.81
+    },
+    {
+     "lap": 31,
+     "lap_time": 90.822
+    },
+    {
+     "lap": 32,
+     "lap_time": 90.834
+    },
+    {
+     "lap": 33,
+     "lap_time": 90.846
+    },
+    {
+     "lap": 34,
+     "lap_time": 91.68
+    },
+    {
+     "lap": 35,
+     "lap_time": 91.672
+    },
+    {
+     "lap": 36,
+     "lap_time": 91.664
+    },
+    {
+     "lap": 37,
+     "lap_time": 91.656
+    },
+    {
+     "lap": 38,
+     "lap_time": 91.648
+    },
+    {
+     "lap": 39,
+     "lap_time": 91.64
+    },
+    {
+     "lap": 40,
+     "lap_time": 91.632
+    },
+    {
+     "lap": 41,
+     "lap_time": 91.624
+    },
+    {
+     "lap": 42,
+     "lap_time": 91.616
+    },
+    {
+     "lap": 43,
+     "lap_time": 91.608
+    },
+    {
+     "lap": 44,
+     "lap_time": 91.6
+    },
+    {
+     "lap": 45,
+     "lap_time": 91.592
+    },
+    {
+     "lap": 46,
+     "lap_time": 91.584
+    },
+    {
+     "lap": 47,
+     "lap_time": 91.576
+    },
+    {
+     "lap": 48,
+     "lap_time": 91.568
+    },
+    {
+     "lap": 49,
+     "lap_time": 91.56
+    },
+    {
+     "lap": 50,
+     "lap_time": 91.552
+    },
+    {
+     "lap": 51,
+     "lap_time": 91.544
+    },
+    {
+     "lap": 52,
+     "lap_time": 91.536
+    },
+    {
+     "lap": 53,
+     "lap_time": 91.528
+    },
+    {
+     "lap": 54,
+     "lap_time": 91.52
+    },
+    {
+     "lap": 55,
+     "lap_time": 91.512
+    },
+    {
+     "lap": 56,
+     "lap_time": 91.504
+    },
+    {
+     "lap": 57,
+     "lap_time": 91.496
+    },
+    {
+     "lap": 58,
+     "lap_time": 91.488
+    },
+    {
+     "lap": 59,
+     "lap_time": 91.48
+    },
+    {
+     "lap": 60,
+     "lap_time": 91.472
+    }
+   ],
+   "delta": "+1.23s",
+   "base_lap_time": 90.45,
+   "stress_lap_time": 91.68
+  },
+  "diarization": [
+   {
+    "speaker": "Driver",
+    "role": "driver",
+    "text": "Rain is getting heavier in turn 15! We need intermediate tyres now, box box box!",
+    "start": 0.0,
+    "end": 4.2,
+    "stress": "Stressed"
+   },
+   {
+    "speaker": "Pit Wall",
+    "role": "engineer",
+    "text": "Box this lap Charles, box for inters.",
+    "start": 4.5,
+    "end": 6.8,
+    "stress": "Calm"
+   }
+  ]
+ },
+ "nor_hungary_tired": {
+  "metadata": {
+   "clip_id": "nor_hungary_tired",
+   "driver_name": "Lando Norris",
+   "racing_number": "4",
+   "team": "McLaren",
+   "grand_prix": "Hungarian Grand Prix",
+   "year": 2024,
+   "lap": 61,
+   "total_laps": 60,
+   "audio_url": "https://livetiming.formula1.com/static/2024/2024-07-21_Hungarian_Grand_Prix/2024-07-21_Race/TeamRadio/LANNOR01_61_20240721_161500.mp3",
+   "transcript": "My neck is killing me on the high speed turns... cockpit temp is unbearable. Doing my best to hold delta."
+  },
+  "stress_analysis": {
+   "mood": "Tired",
+   "stress_score": 74,
+   "confidence": 0.94,
+   "signals": {
+    "pitch_shift_hz": 8.2,
+    "vocal_jitter_pct": 1.4,
+    "speech_rate_wpm": 132,
+    "urgency_score": 0.74
+   },
+   "explanation": [
+    "Fundamental frequency rose 8.2 Hz above the driver's session baseline.",
+    "Vocal jitter measured 1.4% \u2014 within the calm threshold.",
+    "Linguistic urgency scored 0.74 from word choice and repetition.",
+    "Lap time lost +0.87s relative to the driver's clean-air baseline."
+   ]
+  },
+  "telemetry": {
+   "snapshot": {
+    "speed_kmh": 312,
+    "gear": 7,
+    "rpm": 11800,
+    "tire_temps_celsius": {
+     "front_left": 108,
+     "front_right": 111,
+     "rear_left": 96,
+     "rear_right": 99
+    }
+   },
+   "lap_times": [
+    {
+     "lap": 1,
+     "lap_time": 80.162
+    },
+    {
+     "lap": 2,
+     "lap_time": 80.174
+    },
+    {
+     "lap": 3,
+     "lap_time": 80.186
+    },
+    {
+     "lap": 4,
+     "lap_time": 80.198
+    },
+    {
+     "lap": 5,
+     "lap_time": 80.21
+    },
+    {
+     "lap": 6,
+     "lap_time": 80.222
+    },
+    {
+     "lap": 7,
+     "lap_time": 80.234
+    },
+    {
+     "lap": 8,
+     "lap_time": 80.246
+    },
+    {
+     "lap": 9,
+     "lap_time": 80.258
+    },
+    {
+     "lap": 10,
+     "lap_time": 80.27
+    },
+    {
+     "lap": 11,
+     "lap_time": 80.282
+    },
+    {
+     "lap": 12,
+     "lap_time": 80.294
+    },
+    {
+     "lap": 13,
+     "lap_time": 80.306
+    },
+    {
+     "lap": 14,
+     "lap_time": 80.318
+    },
+    {
+     "lap": 15,
+     "lap_time": 80.33
+    },
+    {
+     "lap": 16,
+     "lap_time": 80.342
+    },
+    {
+     "lap": 17,
+     "lap_time": 80.354
+    },
+    {
+     "lap": 18,
+     "lap_time": 80.366
+    },
+    {
+     "lap": 19,
+     "lap_time": 80.378
+    },
+    {
+     "lap": 20,
+     "lap_time": 80.39
+    },
+    {
+     "lap": 21,
+     "lap_time": 80.402
+    },
+    {
+     "lap": 22,
+     "lap_time": 80.414
+    },
+    {
+     "lap": 23,
+     "lap_time": 80.426
+    },
+    {
+     "lap": 24,
+     "lap_time": 80.438
+    },
+    {
+     "lap": 25,
+     "lap_time": 80.45
+    },
+    {
+     "lap": 26,
+     "lap_time": 80.462
+    },
+    {
+     "lap": 27,
+     "lap_time": 80.474
+    },
+    {
+     "lap": 28,
+     "lap_time": 80.486
+    },
+    {
+     "lap": 29,
+     "lap_time": 80.498
+    },
+    {
+     "lap": 30,
+     "lap_time": 80.51
+    },
+    {
+     "lap": 31,
+     "lap_time": 80.522
+    },
+    {
+     "lap": 32,
+     "lap_time": 80.534
+    },
+    {
+     "lap": 33,
+     "lap_time": 80.546
+    },
+    {
+     "lap": 34,
+     "lap_time": 80.558
+    },
+    {
+     "lap": 35,
+     "lap_time": 80.57
+    },
+    {
+     "lap": 36,
+     "lap_time": 80.582
+    },
+    {
+     "lap": 37,
+     "lap_time": 80.594
+    },
+    {
+     "lap": 38,
+     "lap_time": 80.606
+    },
+    {
+     "lap": 39,
+     "lap_time": 80.618
+    },
+    {
+     "lap": 40,
+     "lap_time": 80.63
+    },
+    {
+     "lap": 41,
+     "lap_time": 80.642
+    },
+    {
+     "lap": 42,
+     "lap_time": 80.654
+    },
+    {
+     "lap": 43,
+     "lap_time": 80.666
+    },
+    {
+     "lap": 44,
+     "lap_time": 80.678
+    },
+    {
+     "lap": 45,
+     "lap_time": 80.69
+    },
+    {
+     "lap": 46,
+     "lap_time": 80.702
+    },
+    {
+     "lap": 47,
+     "lap_time": 80.714
+    },
+    {
+     "lap": 48,
+     "lap_time": 80.726
+    },
+    {
+     "lap": 49,
+     "lap_time": 80.738
+    },
+    {
+     "lap": 50,
+     "lap_time": 80.75
+    },
+    {
+     "lap": 51,
+     "lap_time": 80.762
+    },
+    {
+     "lap": 52,
+     "lap_time": 80.774
+    },
+    {
+     "lap": 53,
+     "lap_time": 80.786
+    },
+    {
+     "lap": 54,
+     "lap_time": 80.798
+    },
+    {
+     "lap": 55,
+     "lap_time": 80.81
+    },
+    {
+     "lap": 56,
+     "lap_time": 80.822
+    },
+    {
+     "lap": 57,
+     "lap_time": 80.834
+    },
+    {
+     "lap": 58,
+     "lap_time": 80.846
+    },
+    {
+     "lap": 59,
+     "lap_time": 80.858
+    },
+    {
+     "lap": 60,
+     "lap_time": 80.87
+    }
+   ],
+   "delta": "+0.87s",
+   "base_lap_time": 80.15,
+   "stress_lap_time": 81.02
+  },
+  "diarization": [
+   {
+    "speaker": "Driver",
+    "role": "driver",
+    "text": "My neck is killing me on the high speed turns... cockpit temp is unbearable. Doing my best to hold delta.",
+    "start": 0.0,
+    "end": 5.4,
+    "stress": "Tired"
+   },
+   {
+    "speaker": "Pit Wall",
+    "role": "engineer",
+    "text": "9 laps to go Lando. You're doing a fantastic job, keep the rhythm.",
+    "start": 5.7,
+    "end": 8.9,
+    "stress": "Calm"
+   }
+  ]
+ },
+ "alo_monza_engine": {
+  "metadata": {
+   "clip_id": "alo_monza_engine",
+   "driver_name": "Fernando Alonso",
+   "racing_number": "14",
+   "team": "Aston Martin",
+   "grand_prix": "Italian Grand Prix",
+   "year": 2024,
+   "lap": 18,
+   "total_laps": 60,
+   "audio_url": "https://livetiming.formula1.com/static/2024/2024-09-01_Italian_Grand_Prix/2024-09-01_Race/TeamRadio/FERALO01_18_20240901_152000.mp3",
+   "transcript": "No power on the straight! Loss of deployment! Check telemetry immediately!"
+  },
+  "stress_analysis": {
+   "mood": "Stressed",
+   "stress_score": 84,
+   "confidence": 0.94,
+   "signals": {
+    "pitch_shift_hz": 42.5,
+    "vocal_jitter_pct": 6.8,
+    "speech_rate_wpm": 186,
+    "urgency_score": 0.84
+   },
+   "explanation": [
+    "Fundamental frequency rose 42.5 Hz above the driver's session baseline.",
+    "Vocal jitter measured 6.8% \u2014 above the calm threshold.",
+    "Linguistic urgency scored 0.84 from word choice and repetition.",
+    "Lap time lost +1.15s relative to the driver's clean-air baseline."
+   ]
+  },
+  "telemetry": {
+   "snapshot": {
+    "speed_kmh": 284,
+    "gear": 7,
+    "rpm": 11800,
+    "tire_temps_celsius": {
+     "front_left": 108,
+     "front_right": 111,
+     "rear_left": 96,
+     "rear_right": 99
+    }
+   },
+   "lap_times": [
+    {
+     "lap": 1,
+     "lap_time": 82.312
+    },
+    {
+     "lap": 2,
+     "lap_time": 82.324
+    },
+    {
+     "lap": 3,
+     "lap_time": 82.336
+    },
+    {
+     "lap": 4,
+     "lap_time": 82.348
+    },
+    {
+     "lap": 5,
+     "lap_time": 82.36
+    },
+    {
+     "lap": 6,
+     "lap_time": 82.372
+    },
+    {
+     "lap": 7,
+     "lap_time": 82.384
+    },
+    {
+     "lap": 8,
+     "lap_time": 82.396
+    },
+    {
+     "lap": 9,
+     "lap_time": 82.408
+    },
+    {
+     "lap": 10,
+     "lap_time": 82.42
+    },
+    {
+     "lap": 11,
+     "lap_time": 82.432
+    },
+    {
+     "lap": 12,
+     "lap_time": 82.444
+    },
+    {
+     "lap": 13,
+     "lap_time": 82.456
+    },
+    {
+     "lap": 14,
+     "lap_time": 82.468
+    },
+    {
+     "lap": 15,
+     "lap_time": 82.48
+    },
+    {
+     "lap": 16,
+     "lap_time": 82.492
+    },
+    {
+     "lap": 17,
+     "lap_time": 82.504
+    },
+    {
+     "lap": 18,
+     "lap_time": 83.45
+    },
+    {
+     "lap": 19,
+     "lap_time": 83.442
+    },
+    {
+     "lap": 20,
+     "lap_time": 83.434
+    },
+    {
+     "lap": 21,
+     "lap_time": 83.426
+    },
+    {
+     "lap": 22,
+     "lap_time": 83.418
+    },
+    {
+     "lap": 23,
+     "lap_time": 83.41
+    },
+    {
+     "lap": 24,
+     "lap_time": 83.402
+    },
+    {
+     "lap": 25,
+     "lap_time": 83.394
+    },
+    {
+     "lap": 26,
+     "lap_time": 83.386
+    },
+    {
+     "lap": 27,
+     "lap_time": 83.378
+    },
+    {
+     "lap": 28,
+     "lap_time": 83.37
+    },
+    {
+     "lap": 29,
+     "lap_time": 83.362
+    },
+    {
+     "lap": 30,
+     "lap_time": 83.354
+    },
+    {
+     "lap": 31,
+     "lap_time": 83.346
+    },
+    {
+     "lap": 32,
+     "lap_time": 83.338
+    },
+    {
+     "lap": 33,
+     "lap_time": 83.33
+    },
+    {
+     "lap": 34,
+     "lap_time": 83.322
+    },
+    {
+     "lap": 35,
+     "lap_time": 83.314
+    },
+    {
+     "lap": 36,
+     "lap_time": 83.306
+    },
+    {
+     "lap": 37,
+     "lap_time": 83.298
+    },
+    {
+     "lap": 38,
+     "lap_time": 83.29
+    },
+    {
+     "lap": 39,
+     "lap_time": 83.282
+    },
+    {
+     "lap": 40,
+     "lap_time": 83.274
+    },
+    {
+     "lap": 41,
+     "lap_time": 83.266
+    },
+    {
+     "lap": 42,
+     "lap_time": 83.258
+    },
+    {
+     "lap": 43,
+     "lap_time": 83.25
+    },
+    {
+     "lap": 44,
+     "lap_time": 83.242
+    },
+    {
+     "lap": 45,
+     "lap_time": 83.234
+    },
+    {
+     "lap": 46,
+     "lap_time": 83.226
+    },
+    {
+     "lap": 47,
+     "lap_time": 83.218
+    },
+    {
+     "lap": 48,
+     "lap_time": 83.21
+    },
+    {
+     "lap": 49,
+     "lap_time": 83.202
+    },
+    {
+     "lap": 50,
+     "lap_time": 83.194
+    },
+    {
+     "lap": 51,
+     "lap_time": 83.186
+    },
+    {
+     "lap": 52,
+     "lap_time": 83.178
+    },
+    {
+     "lap": 53,
+     "lap_time": 83.17
+    },
+    {
+     "lap": 54,
+     "lap_time": 83.162
+    },
+    {
+     "lap": 55,
+     "lap_time": 83.154
+    },
+    {
+     "lap": 56,
+     "lap_time": 83.146
+    },
+    {
+     "lap": 57,
+     "lap_time": 83.138
+    },
+    {
+     "lap": 58,
+     "lap_time": 83.13
+    },
+    {
+     "lap": 59,
+     "lap_time": 83.122
+    },
+    {
+     "lap": 60,
+     "lap_time": 83.114
+    }
+   ],
+   "delta": "+1.15s",
+   "base_lap_time": 82.3,
+   "stress_lap_time": 83.45
+  },
+  "diarization": [
+   {
+    "speaker": "Driver",
+    "role": "driver",
+    "text": "No power on the straight! Loss of deployment! Check telemetry immediately!",
+    "start": 0.0,
+    "end": 4.1,
+    "stress": "Stressed"
+   },
+   {
+    "speaker": "Pit Wall",
+    "role": "engineer",
+    "text": "Fail 8-4 default 0-1 on the wheel. Fail 8-4. Resetting MGU-K.",
+    "start": 4.3,
+    "end": 7.6,
+    "stress": "Calm"
+   }
+  ]
+ }
+}

@@ -169,6 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 7. API Communication
+  // Static demo data, used when the Python AI backend is not running.
+  let staticClips = null;
+
+  async function loadStaticClips() {
+    if (staticClips) return staticClips;
+    const res = await fetch('data/clips.json');
+    staticClips = await res.json();
+    return staticClips;
+  }
+
   async function analyzeClip(clipId) {
     try {
       const response = await fetch('/api/analyze-audio', {
@@ -177,9 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ clip_id: clipId }),
       });
       const data = await response.json();
+      if (!response.ok) throw new Error('backend unavailable');
       renderDashboard(data);
     } catch (err) {
       console.error('Failed to analyze clip:', err);
+      // No backend: fall back to the pre-computed demo payloads.
+      try {
+        const clips = await loadStaticClips();
+        const data = clips[clipId];
+        if (data) renderDashboard(data);
+        else console.error('No demo data for clip:', clipId);
+      } catch (e) {
+        console.error('Failed to analyze clip:', err);
+      }
     }
   }
 
